@@ -26,22 +26,24 @@ For reference the coding challenge is stated as:
 ## Requirements
 Create a conda environment to run this project in isolation (not needed but recommended).
 
-```[bash]
+```bash
 conda env create -f environment.yml
 conda activate coding_challenge 
 ```
 
 ## Installation
-```[bash]
-pre-commit install
+```bash
 pip install --editable .
 ```
 
 ## Usage
-```[python]
+```python
 from coding_challenge.main import fold
 
 fold(iterable=[1,2,3], start=0, fn=lambda x,y: x+y)
 ```
 
 Or check the `tests/` for more examples of how to run the code 
+```bash
+pytest -v tests/
+```
