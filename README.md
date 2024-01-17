@@ -1,47 +1,47 @@
-# Taktile Coding Challenge
+# coding_challenge
 
-Your challenge is to implement `fold` in the language of your choice.
+[![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
+
 
 ## Description
 
-`fold` is a higher order function that takes
-* a sequence of type A
-* a "starting" value of type B
-* a function (A, B) -> B
-
-and returns a B. E.g., the `sum` of an array is a special case of fold, where
-* the sequence is an array of numbers
-* the starting value is 0
-* the function is `+`
+This is my Implementation to solve the [Taktile Coding Challenge](https://github.com/taktile-org/coding-challenge)
+For reference the coding challenge is stated as:
 
 
-You can find more information on [Wikipedia](https://en.wikipedia.org/wiki/Fold_(higher-order_function)).
+> Your challenge is to implement `fold` in the language of your choice.
+> `fold` is a higher order function that takes
+> * a sequence of type A
+> * a "starting" value of type B
+> * a function (A, B) -> B
+> 
+> and returns a B. E.g., the `sum` of an array is a special case of fold, where
+> * the sequence is an array of numbers
+> * the starting value is 0
+> * the function is `+`
+> 
+> 
+> You can find more information on [Wikipedia](https://en.wikipedia.org/wiki/Fold_(higher-order_function)).
 
-## Instructions
+## Requirements
+Create a conda environment to run this project in isolation (not needed but recommended).
 
-Fork this repository.
+```[bash]
+conda env create -f environment.yml
+conda activate coding_challenge 
+```
 
-Implement `fold` in any language of your choice. Don't directly use the `fold` that is
-already part of your language (see the list on Wikipedia).
+## Installation
+```[bash]
+pre-commit install
+pip install --editable .
+```
 
-Send us a link to your fork **within 1 week** of being invited to participate on this challenge.
+## Usage
+```[python]
+from coding_challenge.main import fold
 
-## Timebox
+fold(iterable=[1,2,3], start=0, fn=lambda x,y: x+y)
+```
 
-Aim to use about 1 hour of time on the solution, don't use more than 2 hours. We give roughly
-equal weight to the each of the following:
-
-* Documentation
-* Packaging
-* Testing
-* Readability of code
-* Correctness of implementation
-* Performance
-* Generality
-* Correntness of types (if applicable)
-
-Please don't stress if your solution isn't perfect. With a timebox of at most 2 hours, 
-you most likely won't be able to check all the boxes above. This challenge is intended as an 
-exercise in tradeoffs. We want to understand how you view the overall value and lifecycle
-of software.
-
+Or check the `tests/` for more examples of how to run the code 
